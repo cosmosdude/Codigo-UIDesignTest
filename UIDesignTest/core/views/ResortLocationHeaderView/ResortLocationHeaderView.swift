@@ -61,12 +61,7 @@ extension ResortLocationHeaderView: UIScrollViewDelegate {
         renderPageProgress(currentPage)
     }
     
-    func scrollViewWillEndDragging(
-        _ scrollView: UIScrollView,
-        withVelocity velocity: CGPoint,
-        targetContentOffset: UnsafeMutablePointer<CGPoint>
-    ) {
-//        calculatePageIndexBy(contentOffset: targetContentOffset.pointee)
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         focusItem(at: currentPage)
         renderPageProgress(currentPage)
     }
