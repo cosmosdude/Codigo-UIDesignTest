@@ -26,6 +26,8 @@ class ListToggleHeaderView: NibTableViewHeaderFooterView {
     
     private(set) var selectedType: SelectionType = .byRoom
     
+    @IBOutlet private var slopeSwitchView: SlopedSwitch!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         byRoomView.strokeColor = containerView.strokeColor
@@ -34,15 +36,25 @@ class ListToggleHeaderView: NibTableViewHeaderFooterView {
     
     func setSelection(by selectionType: SelectionType) {
         self.selectedType = selectionType
-        if selectionType == .byRoom {
-            byRoomView.fillColor = containerView.strokeColor
-            byRateView.fillColor = containerView.fillColor
-        } else {
-            byRoomView.fillColor = containerView.fillColor
-            byRateView.fillColor = containerView.strokeColor
-        }
+        slopeSwitchView.setSelection(by: selectedType)
     }
     
+    
+    
+    
+    var tween: CGFloat = 0 {
+        didSet {
+            guard tween >= 0 && tween <= 1 else {
+                tween = max(0, min(tween, 1))
+                return
+            }
+            print("Tween:", tween)
+            slopeSwitchView.strokeEnd = 1 - tween
+            slopeSwitchView.horizontalPadding = 20 * (1-tween)
+            slopeSwitchView.verticalPadding = 10 * (1-tween)
+            slopeSwitchView.slope = 15 * (1-tween)
+        }
+    }
     
 }
 
@@ -62,16 +74,7 @@ extension ListToggleHeaderView {
 
 extension ListToggleHeaderView {
     
-    enum SelectionType {
-        case byRoom, byRate
-        
-        mutating func toggle() {
-            switch self {
-            case .byRoom: self = .byRate
-            case .byRate: self = .byRoom
-            }
-        }
-    }
+    typealias SelectionType = SlopedSwitch.SelectionType
     
 }
 

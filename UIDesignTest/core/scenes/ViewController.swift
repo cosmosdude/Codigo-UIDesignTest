@@ -91,16 +91,18 @@ extension ViewController: UIScrollViewDelegate {
         let galleryHeight = gallery.frame.size.height
         let offsetY = min(scrollView.contentOffset.y, galleryHeight)
         
-        let length: CGFloat = 150
+        let length: CGFloat = 60
         let distance = min(galleryHeight - offsetY, length)
         
         let tween = distance / length
         
-        guard let selector = tableView.headerView(forSection: 1)
+        guard case let selector as ListToggleHeaderView = tableView
+                .headerView(forSection: 1)
         else { return }
         
         let inverseTween = 1 - tween
         
+        selector.tween = inverseTween
     }
     
 }
@@ -212,9 +214,18 @@ extension ViewController: ListToggleHeaderViewSelectionDelegate {
         selected type: ListToggleHeaderView.SelectionType
     ) {
         selectedType = type
-        tableView.reloadSections(
-            [1], with: .fade
-        )
+        let previousTween = (tableView.headerView(forSection: 1) as? ListToggleHeaderView)?.tween ?? 0
+        UITableView.performWithoutAnimation {
+            tableView.reloadSections(
+                [1], with: .none
+            )
+            tableView.layoutSubviews()
+            interactivelyAnimateSelector(in: tableView)
+        }
+        
+        (tableView.headerView(forSection: 1) as? ListToggleHeaderView)?
+            .tween = previousTween
+        
     }
     
 }

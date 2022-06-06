@@ -24,7 +24,7 @@ struct ByRateViewModel {
 extension ByRateViewModel {
     
     static func generate() -> [ByRateViewModel] {
-        [
+        [[ByRateViewModel]](repeating:[
             .init(
                 subtitle: "YOUR E-VOUCHER RATE",
                 title: "Mobile App Special Voucher",
@@ -36,7 +36,7 @@ extension ByRateViewModel {
                   price: "161.42",
                   membersDealsAvailable: false
             )
-        ]
+        ], count: 10).flatMap{$0}
     }
     
 }

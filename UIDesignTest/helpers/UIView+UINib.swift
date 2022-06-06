@@ -114,6 +114,24 @@ class NibView: UIView, NibLoadableView {
     
 }
 
+class NibControl: UIControl, NibLoadableView {
+
+    var nibOrNil: UINib? { nil }
+
+    var nibContainerView: UIView? { self }
+    
+    override init(frame: CGRect) {
+        super.init(frame: .zero)
+        loadAndAttachNib()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        loadAndAttachNib()
+    }
+    
+}
+
 
 class NibTableViewCell: UITableViewCell, NibLoadableView {
     
