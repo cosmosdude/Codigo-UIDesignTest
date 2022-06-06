@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     
     @IBOutlet private(set) var tableView: UITableView!
     
+    @IBOutlet private(set) var navContainer: UIView!
+    @IBOutlet private(set) var navTitlesContainer: UIView!
+    
     var selectedType: ListToggleHeaderView.SelectionType = .byRoom
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +50,60 @@ class ViewController: UIViewController {
 
 }
 
+
+
+extension ViewController {
+    
+    @IBAction
+    private func actionForBackNavigation(_ sender: UIButton!) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+}
+
+
+
+extension ViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        interactivelyAnimateTitleItems(in: scrollView)
+        interactivelyAnimateSelector(in: scrollView)
+    }
+    
+    private func interactivelyAnimateTitleItems(in scrollView: UIScrollView) {
+        guard let gallery = tableView.headerView(forSection: 0)
+        else { return }
+        
+        let galleryHeight = gallery.frame.size.height
+        
+        let offsetY = min(max(scrollView.contentOffset.y - 100, 0), galleryHeight)
+        
+        
+        if galleryHeight.isZero { return }
+        
+        let tween = min(offsetY / (galleryHeight/2), 1)
+        navTitlesContainer.alpha = tween
+    }
+    
+    private func interactivelyAnimateSelector(in scrollView: UIScrollView) {
+        guard let gallery = tableView.headerView(forSection: 0)
+        else { return }
+        let galleryHeight = gallery.frame.size.height
+        let offsetY = min(scrollView.contentOffset.y, galleryHeight)
+        
+        let length: CGFloat = 150
+        let distance = min(galleryHeight - offsetY, length)
+        
+        let tween = distance / length
+        
+        guard let selector = tableView.headerView(forSection: 1)
+        else { return }
+        
+        let inverseTween = 1 - tween
+        
+    }
+    
+}
 
 
 

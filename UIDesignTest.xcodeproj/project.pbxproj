@@ -29,6 +29,7 @@
 		7D29CD2B2838D3C80096BF60 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7D29CD212838D3C70096BF60 /* OFL.txt */; };
 		7D29CD2C2838D3C80096BF60 /* EncodeSansSemiCondensed-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D29CD222838D3C80096BF60 /* EncodeSansSemiCondensed-ExtraBold.ttf */; };
 		7D29CD2D2838D3C80096BF60 /* EncodeSansSemiCondensed-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D29CD232838D3C80096BF60 /* EncodeSansSemiCondensed-ExtraLight.ttf */; };
+		7DAE91D2284DD552005AE66B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE91D1284DD552005AE66B /* ListViewController.swift */; };
 		7DC0F2352838D96D00F7DAE3 /* UIView+UINib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0F2342838D96D00F7DAE3 /* UIView+UINib.swift */; };
 		7DC0F2382838D9C600F7DAE3 /* ResortLocationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0F2372838D9C600F7DAE3 /* ResortLocationHeaderView.swift */; };
 		7DC0F23A2838D9D200F7DAE3 /* ResortLocationHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DC0F2392838D9D200F7DAE3 /* ResortLocationHeaderView.xib */; };
@@ -97,6 +98,7 @@
 		7D29CD212838D3C70096BF60 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		7D29CD222838D3C80096BF60 /* EncodeSansSemiCondensed-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EncodeSansSemiCondensed-ExtraBold.ttf"; sourceTree = "<group>"; };
 		7D29CD232838D3C80096BF60 /* EncodeSansSemiCondensed-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EncodeSansSemiCondensed-ExtraLight.ttf"; sourceTree = "<group>"; };
+		7DAE91D1284DD552005AE66B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		7DC0F2342838D96D00F7DAE3 /* UIView+UINib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+UINib.swift"; sourceTree = "<group>"; };
 		7DC0F2372838D9C600F7DAE3 /* ResortLocationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortLocationHeaderView.swift; sourceTree = "<group>"; };
 		7DC0F2392838D9D200F7DAE3 /* ResortLocationHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResortLocationHeaderView.xib; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			children = (
 				7D29CCDB2838D17A0096BF60 /* ViewController.swift */,
 				7D29CCDD2838D17A0096BF60 /* Main.storyboard */,
+				7DAE91D1284DD552005AE66B /* ListViewController.swift */,
 			);
 			path = scenes;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				7DC0F23C2838DA3A00F7DAE3 /* UITableView+Helpers.swift in Sources */,
 				7DC0F2452838E7F600F7DAE3 /* ImageCollectionViewCell.swift in Sources */,
 				7DC0F2382838D9C600F7DAE3 /* ResortLocationHeaderView.swift in Sources */,
+				7DAE91D2284DD552005AE66B /* ListViewController.swift in Sources */,
 				7DC0F23F2838DBD100F7DAE3 /* ListToggleHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

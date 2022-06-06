@@ -9,6 +9,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="EncodeSansSemiCondensed-Bold.ttf">
+            <string>EncodeSansSemiCondensed-Bold</string>
+        </array>
+        <array key="EncodeSansSemiCondensed-Medium.ttf">
+            <string>EncodeSansSemiCondensed-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -37,7 +45,26 @@
                                                             <imageReference key="image" image="arrow.backward" catalog="system" symbolScale="large"/>
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="actionForBackNavigation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="37f-G1-Hlr"/>
+                                                        </connections>
                                                     </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="O2j-tz-Afd">
+                                                <rect key="frame" x="60" y="8" width="234" height="34"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Furama Riverfront, Singapore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgx-mp-SFz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="234" height="19"/>
+                                                        <fontDescription key="fontDescription" name="EncodeSansSemiCondensed-Bold" family="Encode Sans Semi Condensed" pointSize="15"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="405 Havelock Road, Singapore 169633" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNV-18-Gns">
+                                                        <rect key="frame" x="0.0" y="19" width="234" height="15"/>
+                                                        <fontDescription key="fontDescription" name="EncodeSansSemiCondensed-Medium" family="Encode Sans Semi Condensed" pointSize="12"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gec-gV-WRF">
@@ -71,7 +98,10 @@
                                             <constraint firstAttribute="bottom" secondItem="gec-gV-WRF" secondAttribute="bottom" constant="5" id="6Rd-Ze-PqM"/>
                                             <constraint firstItem="gec-gV-WRF" firstAttribute="top" secondItem="aza-8e-6qG" secondAttribute="top" constant="5" id="LkJ-Ua-QXA"/>
                                             <constraint firstItem="gzz-B8-GUw" firstAttribute="top" secondItem="aza-8e-6qG" secondAttribute="top" constant="5" id="Qxu-n8-atn"/>
+                                            <constraint firstItem="gec-gV-WRF" firstAttribute="leading" secondItem="O2j-tz-Afd" secondAttribute="trailing" constant="10" id="TLu-uY-cRK"/>
                                             <constraint firstAttribute="trailing" secondItem="gec-gV-WRF" secondAttribute="trailing" constant="10" id="WR9-k7-tPr"/>
+                                            <constraint firstItem="O2j-tz-Afd" firstAttribute="centerY" secondItem="gzz-B8-GUw" secondAttribute="centerY" id="e5Z-sA-DHQ"/>
+                                            <constraint firstItem="O2j-tz-Afd" firstAttribute="leading" secondItem="gzz-B8-GUw" secondAttribute="trailing" constant="10" id="glU-nE-IJf"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -101,6 +131,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="navContainer" destination="Z1H-VX-2AN" id="ikY-20-Ofk"/>
+                        <outlet property="navTitlesContainer" destination="O2j-tz-Afd" id="L0E-2d-ulW"/>
                         <outlet property="tableView" destination="gU3-9p-2I3" id="EP3-7f-FoR"/>
                     </connections>
                 </viewController>
@@ -116,6 +148,9 @@
         <namedColor name="AccentColor">
             <color red="1" green="0.4830000102519989" blue="0.41999998688697815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
