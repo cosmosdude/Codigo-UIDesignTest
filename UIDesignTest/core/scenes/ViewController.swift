@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet private(set) var tableView: UITableView!
     
     var selectedType: ListToggleHeaderView.SelectionType = .byRoom
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,7 +44,6 @@ class ViewController: UIViewController {
             self.tableView.alpha = 1
         }
     }
-
 
 }
 
