@@ -31,6 +31,7 @@
 		7D29CD2D2838D3C80096BF60 /* EncodeSansSemiCondensed-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D29CD232838D3C80096BF60 /* EncodeSansSemiCondensed-ExtraLight.ttf */; };
 		7DAE91D2284DD552005AE66B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE91D1284DD552005AE66B /* ListViewController.swift */; };
 		7DAE91D5284DE0B3005AE66B /* SlopedSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE91D4284DE0B3005AE66B /* SlopedSwitch.swift */; };
+		7DAE91D7284E0532005AE66B /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE91D6284E0532005AE66B /* PushTransition.swift */; };
 		7DC0F2352838D96D00F7DAE3 /* UIView+UINib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0F2342838D96D00F7DAE3 /* UIView+UINib.swift */; };
 		7DC0F2382838D9C600F7DAE3 /* ResortLocationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0F2372838D9C600F7DAE3 /* ResortLocationHeaderView.swift */; };
 		7DC0F23A2838D9D200F7DAE3 /* ResortLocationHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DC0F2392838D9D200F7DAE3 /* ResortLocationHeaderView.xib */; };
@@ -101,6 +102,7 @@
 		7D29CD232838D3C80096BF60 /* EncodeSansSemiCondensed-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EncodeSansSemiCondensed-ExtraLight.ttf"; sourceTree = "<group>"; };
 		7DAE91D1284DD552005AE66B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		7DAE91D4284DE0B3005AE66B /* SlopedSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlopedSwitch.swift; sourceTree = "<group>"; };
+		7DAE91D6284E0532005AE66B /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
 		7DC0F2342838D96D00F7DAE3 /* UIView+UINib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+UINib.swift"; sourceTree = "<group>"; };
 		7DC0F2372838D9C600F7DAE3 /* ResortLocationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortLocationHeaderView.swift; sourceTree = "<group>"; };
 		7DC0F2392838D9D200F7DAE3 /* ResortLocationHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResortLocationHeaderView.xib; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				7D29CCDB2838D17A0096BF60 /* ViewController.swift */,
 				7D29CCDD2838D17A0096BF60 /* Main.storyboard */,
 				7DAE91D1284DD552005AE66B /* ListViewController.swift */,
+				7DAE91D6284E0532005AE66B /* PushTransition.swift */,
 			);
 			path = scenes;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 			files = (
 				7DC0F24E2838F7DC00F7DAE3 /* ByRoomViewModel.swift in Sources */,
 				7DC0F2612839122100F7DAE3 /* DashBorderedView.swift in Sources */,
+				7DAE91D7284E0532005AE66B /* PushTransition.swift in Sources */,
 				7D29CCDC2838D17A0096BF60 /* ViewController.swift in Sources */,
 				7D29CCD82838D17A0096BF60 /* AppDelegate.swift in Sources */,
 				7DC0F24B2838F01900F7DAE3 /* ClippedSlopeView.swift in Sources */,

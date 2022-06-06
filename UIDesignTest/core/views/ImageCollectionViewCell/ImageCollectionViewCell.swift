@@ -19,13 +19,21 @@ class ImageCollectionViewCell: NibCollectionViewCell {
         stopAnimating()
         
         let smallRandomDelay = TimeInterval.random(in: 0...0.5)
+        
         UIView.animate(
             withDuration: 5, delay: smallRandomDelay,
-            usingSpringWithDamping: 10, initialSpringVelocity: 10,
-            options: [.repeat]
+            options: [.repeat, .curveLinear]
         ) {
             self.runKeyframeAnimation()
         } completion: { _ in }
+
+//        UIView.animate(
+//            withDuration: 5, delay: smallRandomDelay,
+//            usingSpringWithDamping: 30, initialSpringVelocity: 30,
+//            options: [.repeat]
+//        ) {
+//
+//        } completion: { _ in }
 
     }
     

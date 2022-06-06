@@ -21,12 +21,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.window = window
         
+        let viewController = ListViewController(style: .plain)
         let nav = UINavigationController(
-            rootViewController: ListViewController(style: .plain)
+            rootViewController: viewController
         )
+        nav.delegate = viewController
         nav.isNavigationBarHidden = true
         window.rootViewController = nav
-        
+        window.backgroundColor = .white
         window.makeKeyAndVisible()
     }
 

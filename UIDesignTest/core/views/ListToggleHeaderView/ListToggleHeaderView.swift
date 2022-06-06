@@ -17,10 +17,6 @@ protocol ListToggleHeaderViewSelectionDelegate: AnyObject {
 }
 
 class ListToggleHeaderView: NibTableViewHeaderFooterView {
-
-    @IBOutlet private var containerView: ClippedSlopeView!
-    @IBOutlet private var byRoomView: ClippedSlopeView!
-    @IBOutlet private var byRateView: ClippedSlopeView!
     
     weak var selectionDelegate: ListToggleHeaderViewSelectionDelegate?
     
@@ -30,8 +26,6 @@ class ListToggleHeaderView: NibTableViewHeaderFooterView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        byRoomView.strokeColor = containerView.strokeColor
-        byRateView.strokeColor = containerView.strokeColor
     }
     
     func setSelection(by selectionType: SelectionType) {
@@ -48,7 +42,6 @@ class ListToggleHeaderView: NibTableViewHeaderFooterView {
                 tween = max(0, min(tween, 1))
                 return
             }
-            print("Tween:", tween)
             slopeSwitchView.strokeEnd = 1 - tween
             slopeSwitchView.horizontalPadding = 20 * (1-tween)
             slopeSwitchView.verticalPadding = 10 * (1-tween)

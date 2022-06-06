@@ -36,16 +36,10 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.transform = .init(translationX: 0, y: 60)
-        tableView.alpha = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 0.5) {
-            self.tableView.transform = .identity
-            self.tableView.alpha = 1
-        }
     }
 
 }

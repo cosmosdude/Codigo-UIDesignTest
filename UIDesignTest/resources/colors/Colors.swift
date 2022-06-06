@@ -12,7 +12,9 @@ extension Resources {
     
     enum Colors {
         
-        static var accentColor: UIColor = UIColor(named: "AccentColor") ?? .clear
+        static var accentColor = UIColor(named: "AccentColor") ?? .clear
+        static var selectionColor = UIColor(named: "SelectionColor") ?? .clear
+        static var yellowColor = UIColor(named: "Yellow") ?? .clear
         
     }
     
