@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,10 +13,28 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="rA1-J9-VtT">
-            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6xV-Ke-Xds">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <point key="canvasLocation" x="-64" y="74"/>
-        </imageView>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rA1-J9-VtT">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="rA1-J9-VtT" secondAttribute="trailing" id="QVu-rE-QDH"/>
+                <constraint firstAttribute="bottom" secondItem="rA1-J9-VtT" secondAttribute="bottom" id="gNT-et-7sU"/>
+                <constraint firstItem="rA1-J9-VtT" firstAttribute="leading" secondItem="6xV-Ke-Xds" secondAttribute="leading" id="qIa-5R-rhC"/>
+                <constraint firstItem="rA1-J9-VtT" firstAttribute="top" secondItem="6xV-Ke-Xds" secondAttribute="top" id="yUy-OS-9UY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-151" y="5"/>
+        </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -142,4 +142,15 @@ extension ResortLocationHeaderView: UICollectionViewDelegateFlowLayout {
         return .init(top: 0, left: 30, bottom: 0, right: 30)
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard case let cell = cell as? ImageCollectionViewCell else { return }
+        cell?.startAnimating()
+    }
+    
+    
+    func restartAnimations() {
+        galleryView.visibleCells
+            .compactMap{$0 as? ImageCollectionViewCell}
+            .forEach { $0.startAnimating() }
+    }
 }

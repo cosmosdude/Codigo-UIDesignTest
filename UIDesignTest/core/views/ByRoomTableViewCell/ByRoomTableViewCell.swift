@@ -21,13 +21,11 @@ class ByRoomTableViewCell: NibTableViewCell {
         // Initialization code
         rateButton.layer.borderWidth = 2
         rateButton.layer.borderColor = R.Colors.accentColor.cgColor
-        
         selectionStyle = .none
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 

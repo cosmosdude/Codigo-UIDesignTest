@@ -198,6 +198,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(
+        _ tableView: UITableView, willDisplayHeaderView view: UIView,
+        forSection section: Int
+    ) {
+        if section == 0 {
+            let header = view as? ResortLocationHeaderView
+            header?.restartAnimations()
+        }
+    }
+    
+    func tableView(
         _ tableView: UITableView, heightForHeaderInSection section: Int
     ) -> CGFloat {
         UITableView.automaticDimension
@@ -226,6 +236,16 @@ extension ViewController: ListToggleHeaderViewSelectionDelegate {
         (tableView.headerView(forSection: 1) as? ListToggleHeaderView)?
             .tween = previousTween
         
+        for (i, each) in tableView.visibleCells.enumerated() {
+            each.alpha = 0
+            each.transform = .init(translationX: 0, y: 10)
+            
+            UIView.animate(withDuration: 0.25, delay: TimeInterval(i) * 0.1, options: []) {
+                each.alpha = 1
+                each.transform = .identity
+            } completion: { _ in }
+
+        }
     }
     
 }
